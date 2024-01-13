@@ -1,0 +1,191 @@
+$font-stack: Arial; 
+$font-family-one: 'Marzaki Text';
+$font-family-two: 'Karla';
+$primary-one-color: #495E57;
+$primary-two-color: #F4CE14;
+$secondary-one-color: #EE9972;
+$secondary-two-color: #FBDABB;
+$highlight-one-color: #EDEFEE;
+$highlight-two-color: #333333;
+
+%margin-root {
+  margin: 0 auto;
+  width: 90%;
+}
+
+*,:after,:before {
+  box-sizing: border-box
+}
+
+blockquote,body,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre {
+  margin: 0
+}
+
+ol,ul {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+html:focus-within {
+  scroll-behavior: smooth
+}
+
+button,input,select,textarea {
+  font: inherit
+}
+
+a:active,a:hover,a:link,a:visited {
+  text-decoration: none
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-size: inherit;
+  font-weight: inherit
+}
+
+
+
+// TO TEST
+.title {
+  font-family: $font-family-one, sans-serif;
+  font-size: 64pt;
+  font-weight: 500
+}
+
+.subtitle {
+  font-family: $font-family-one, sans-serif;
+  font-size: 40pt;
+  font-weight: 400
+}
+
+.leadtext {
+  font-family: $font-family-two, serif;
+  font-size: 18pt;
+  font-weight: 400
+}
+.section-title {
+  font-family: $font-family-two, serif;
+  font-size: 20pt;
+  font-weight: 800
+}
+%section-title {
+  font-family: $font-family-two, serif;
+  font-size: 20pt;
+  font-weight: 800
+}
+.section-categories {
+  font-family: $font-family-two, serif;
+  font-size: 16pt;
+  font-weight: 800
+}
+.card-title {
+  font-family: $font-family-two, serif;
+  font-size: 18pt;
+  font-weight: 700
+}
+.paragraph-text {
+  font-family: $font-family-two, serif;
+  font-size: 16pt;
+  font-weight: 400
+}
+.highlight-text {
+  font-family: $font-family-two, serif;
+  font-size: 16pt;
+  font-weight: 500
+}
+%highlight-text {
+  font-family: $font-family-two, serif;
+  font-size: 16pt;
+  font-weight: 500
+}
+// --> TO TEST
+
+
+body,header {
+  background-color: $highlight-one-color
+}
+
+header {
+  // position: fixed;
+  align-items: center;
+  padding: 1rem
+}
+
+header > div {
+  @extend %margin-root;
+}
+
+.flex-v {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-h {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.li-header a {
+  padding: 0 20px;
+  color: $highlight-two-color;
+}
+
+footer {
+  background-color: $primary-one-color;
+  align-items: center;
+  padding: 3rem
+}
+
+footer > div {
+  @extend %margin-root;
+}
+
+footer h3 {
+  @extend %section-title;
+  color: $primary-two-color;
+}
+
+.footer-nav {
+  padding: 0 40px;
+}
+
+.footer-nav a {
+  @extend %highlight-text;
+  color: $highlight-one-color;
+  padding: 3px 0;
+}
+
+@media (max-width: 440px) {
+  header {
+    background-color: black
+  }
+}
+
+@media (min-width: 440px) and (max-width: 640px) {
+  header {
+    background-color: grey
+  }
+}
+
+@media (min-width: 640px) {
+  header {
+    background-color: rgb(150, 60, 60)
+  }
+}
+@media (min-width: 768px) {
+  header {
+    background-color: rgb(236, 147, 29)
+  }
+}
+@media (min-width: 1024px) {
+  header {
+    background-color: rgb(191, 241, 53)
+  }
+}
+@media (min-width: 1200px) {
+  header {
+    background-color: rgb(7, 165, 152)
+  }
+}
