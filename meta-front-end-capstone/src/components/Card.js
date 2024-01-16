@@ -13,15 +13,15 @@ function Card(props) {
     return (
       <div className='card'>
 
-        <img src={card.img} alt="bruschetta card" />
+        <img src={props.card.img} alt="bruschetta card" />
 
         <div className='card-body'>
           <div className='card-header'>
-            <h1 className='card-title'>{card.h1}</h1>
-            <span className='card-price'>{card.price}</span>
+            <h1 className='card-title'>{props.card.h1}</h1>
+            <span className='card-price'>{props.card.price}</span>
           </div>
           <p className='card-description'>
-            {card.description}
+            {props.card.description}
           </p>
           <button className='card-button'>
             <span>Order a delivery</span>

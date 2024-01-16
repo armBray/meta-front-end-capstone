@@ -250,6 +250,7 @@ header {
   }
 
   .card {
+    // height: 430px;
     background-color:#EDEFEE;
     display: flex;
     flex-direction: column;
@@ -266,6 +267,7 @@ header {
   .card-body {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
   }
 
   .card-header {
@@ -282,6 +284,7 @@ header {
 
   .card-description {
     padding: 10px 20px;
+    height: 120px;
   }
 
   .card-button {
