@@ -8,6 +8,10 @@ $secondary-two-color: #FBDABB;
 $highlight-one-color: #EDEFEE;
 $highlight-two-color: #333333;
 
+:root{
+  font-family: 'Karla';
+}
+
 @mixin margin-root() {
   margin: 0 auto;
   width: 100%;
@@ -108,6 +112,7 @@ body,header {
 header {
   @include margin-root();
   padding: 20px;
+  z-index: 50;
 }
 
 .hamburger {
@@ -174,14 +179,18 @@ header {
 
   button {
     border: none;
-    border-radius: 16px;
+    border-radius: 10px;
     background-color:#F4CE14;
     width: fit-content;
-    padding: 10px 20px;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #333333;
+    align-self: center;
   }
 
   button:hover {
-    background-color:#a18a12;
+    background-color:#dfa916;
   }
 
   img {
@@ -193,8 +202,44 @@ header {
     bottom: 150px;
     left: 60%
   }
+}
+
+.main-menu {
+  padding: 50px 20px;
+  .bar-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 15px;
+  }
 
 
+
+  button {
+    border: none;
+    border-radius: 10px;
+    background-color:#EE9972;
+    width: fit-content;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #333333;
+  }
+
+  button:hover {
+    background-color:#dfa916;
+  }
+}
+
+.main-customers {
+  background-color: #495E57;
+}
+.main-chicago {
+  background-color:#EDEFEE;
+}
+.main-booking {
+  background-color: #495E57;
 }
 
 // *** FOOTER ***
@@ -271,6 +316,16 @@ header div {
     img {
       display: inline;
     }
+
+    button {
+      align-self: start;
+    }
+  }
+
+  .main-menu {
+    h1,button {
+      align-self: start;
+    }
   }
 }
 
@@ -295,7 +350,7 @@ header div {
     img {
       width: 40%;
       max-width: 400px;
-      bottom: 5px;
+      bottom: 100px;
       left: 50%;
     }
   }
