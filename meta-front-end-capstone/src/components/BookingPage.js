@@ -4,7 +4,7 @@ import Button from "./Button";
 
 function BookingPage() {
     return (
-      <main>
+      <main id='booking'>
         <div className="main-booking">
           <div className='bar-title'>
             <h1 className='section-title'>Booking</h1>

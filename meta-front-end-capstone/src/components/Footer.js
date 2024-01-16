@@ -3,7 +3,7 @@ import Nav from './Nav';
 
 function Footer() {
     return (
-      <footer>
+      <footer id='footer'>
           <img id='logo-footer' src={logo} alt="logo footer" height="200px" />
 
           <nav className='footer-nav'>

@@ -4,7 +4,7 @@ import Button from "./Button";
 
 function CustomersSay() {
     return (
-      <main>
+      <main id='customersay'>
         <div className="main-customers">
           <div className='bar-title'>
             <h1 className='section-title'>Testimonials</h1>

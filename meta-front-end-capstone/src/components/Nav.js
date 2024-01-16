@@ -1,15 +1,15 @@
-import {Link} from 'react-router-dom'
+
 
 function Nav(props) {
     return (
       <nav>
         {props.name === 'header' ?
           <ul className='li-header highlight-text flex-h' onClick={props.onClick} ref={props.refProp}>
-            <li><Link to="">Home</Link></li>
-            <li><Link to="/customersay">About</Link></li>
-            <li><Link to="/specials">Menu</Link></li>
-            <li><Link to="/booking">Reservation</Link></li>
-            <li><Link to="/specials">Order Online</Link></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="#customersay">About</a></li>
+            <li><a href="#specials">Menu</a></li>
+            <li><a href="#booking">Reservation</a></li>
+            <li><a href="#footer">Contact</a></li>
             <li><a href="#login">Login</a></li>
           </ul>
 

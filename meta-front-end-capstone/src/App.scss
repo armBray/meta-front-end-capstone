@@ -154,8 +154,13 @@ header {
 
 // *** MAIN ***
 
+.App main {
+  width: 100%;
+  margin: auto;
+}
 
 .main-hero {
+
   background-color: $primary-one-color;
   display: flex;
   flex-direction: column;
@@ -187,6 +192,7 @@ header {
     font-weight: 500;
     color: #333333;
     align-self: center;
+    cursor: pointer;
   }
 
   button:hover {
@@ -204,8 +210,15 @@ header {
   }
 }
 
+#specials {
+
+  background-color:#ffffff;
+}
 .main-menu {
-  padding: 50px 20px;
+  background-color:#ffffff;
+  padding: 6rem 3rem;
+  width: 80%;
+  margin: auto;
   .bar-title {
     display: flex;
     flex-direction: column;
@@ -213,8 +226,6 @@ header {
     align-items: center;
     row-gap: 15px;
   }
-
-
 
   button {
     border: none;
@@ -225,10 +236,79 @@ header {
     font-size: 20px;
     font-weight: 500;
     color: #333333;
+    cursor: pointer;
   }
 
   button:hover {
-    background-color:#dfa916;
+    background-color:#f08655;
+  }
+
+  .main-menu-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,20rem);
+    justify-content: center;
+  }
+
+  .card {
+    background-color:#EDEFEE;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 20px 0;
+    border-radius: 15px;
+  }
+
+  .card > img {
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-header {
+    padding:  20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card-price {
+    color: #EE9972;
+    font-weight: 500;
+  }
+
+  .card-description {
+    padding: 10px 20px;
+  }
+
+  .card-button {
+    background-color: #495E57;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #EDEFEE;
+  }
+  .card-button:hover {
+    background-color:#2b6954;
+  }
+  .card-button span {
+    animation: flip 2s infinite;
+    animation-delay: calc(.2s * var(--i))
+  }
+
+  @keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg) 
+    }
+  }
+  .card-button img {
+    width: 20px;
+    background-color: #EDEFEE;
+    border-radius: 20%;
   }
 }
 
@@ -236,7 +316,7 @@ header {
   background-color: #495E57;
 }
 .main-chicago {
-  background-color:#EDEFEE;
+  background-color:#ffffff;
 }
 .main-booking {
   background-color: #495E57;
@@ -409,15 +489,11 @@ header div {
     transform: translateX(0);
   }
 
-  main {
-    padding-top: 120px;
+  .main-hero {
+    padding-top: 200px;
   }
 
   .main-hero{
-    img{
-      // bottom: 50px;
-    }
-
     p {
       font-size: 20px;
     }
@@ -487,9 +563,9 @@ header div {
   .main-hero {
 
     img {
-      width: 40%;
-      max-width: 500px;
-      bottom: 20px;
+      width: 40%;    
+      max-width: 395px;
+      bottom: 315px;
       left: 55%;
     }
   }
