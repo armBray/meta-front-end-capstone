@@ -48,13 +48,13 @@ h1,h2,h3,h4,h5,h6 {
 // TO TEST
 .title {
   font-family: $font-family-one, sans-serif;
-  font-size: 64pt;
+  font-size: 48pt;
   font-weight: 500
 }
 
 .subtitle {
   font-family: $font-family-one, sans-serif;
-  font-size: 40pt;
+  font-size: 32pt;
   font-weight: 400
 }
 
@@ -148,18 +148,50 @@ header {
 }
 
 // *** MAIN ***
+
+
 .main-hero {
   background-color: $primary-one-color;
   display: flex;
   flex-direction: column;
+  padding: 6rem 3rem;
+
+
 
   h1 {
     color: #F4CE14;
-    font-size: large;
   }
+
   h2,p {
     color:#EDEFEE ;
-    font-size: medium;
+  }
+
+  p {
+    padding: 40px 10px;
+    min-width: 50px;
+    max-width: 550px;
+  }
+
+  button {
+    border: none;
+    border-radius: 16px;
+    background-color:#F4CE14;
+    width: fit-content;
+    padding: 10px 20px;
+  }
+
+  button:hover {
+    background-color:#a18a12;
+  }
+
+  img {
+    display: none;
+    border-radius: 10px;
+    width: 30%;
+    max-width: 350px;
+    position: absolute;
+    bottom: 150px;
+    left: 60%
   }
 
 
@@ -234,6 +266,12 @@ header div {
   header {
     background-color: rgb(37, 37, 37)
   }
+
+  .main-hero{
+    img {
+      display: inline;
+    }
+  }
 }
 
 @media (min-width: 640px) {
@@ -248,11 +286,27 @@ header div {
     background-color: rgb(150, 60, 60)
   }
 
+
+  .main-hero{
+    p {
+      max-width: 300px;
+    }
+
+    img {
+      width: 40%;
+      max-width: 400px;
+      bottom: 5px;
+      left: 50%;
+    }
+  }
+
   footer {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     row-gap: 30px;
   }
+
+
 
 }
 
@@ -300,6 +354,20 @@ header div {
     transform: translateX(0);
   }
 
+  main {
+    padding-top: 120px;
+  }
+
+  .main-hero{
+    img{
+      // bottom: 50px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  }
+
 }
 
 @media (min-width: 1024px) {
@@ -312,6 +380,22 @@ header div {
     padding: 0 40px;
   }
 
+  .main-hero {
+    p {
+      font-size: 25px;
+      max-width: 400px;
+    }
+
+    padding-left: 15%;
+
+    img {
+      width: 40%;
+      max-width: 350px;
+      bottom: 0px;
+      left: 55%;
+    }
+  }
+
 
   footer {
     grid-template-columns: repeat(4, 1fr);
@@ -322,5 +406,36 @@ header div {
 @media (min-width: 1200px) {
   header {
     background-color: rgb(7, 165, 152)
+  }
+
+  .main-hero {
+    p {
+      font-size: 30px;
+      max-width: 450px;
+    }
+
+    padding-left: 25%;
+
+    img {
+      width: 40%;
+      max-width: 350px;
+      bottom: -10px;
+      left: 60%;
+    }
+  }
+}
+@media (min-width: 1500px) {
+  header {
+    background-color: rgb(2, 65, 59)
+  }
+
+  .main-hero {
+
+    img {
+      width: 40%;
+      max-width: 500px;
+      bottom: 20px;
+      left: 55%;
+    }
   }
 }
