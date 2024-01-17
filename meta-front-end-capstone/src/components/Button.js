@@ -2,7 +2,7 @@
 
 function Button(props) {
     return (
-      <button>
+      <button ref={props.refProp} onClick={props.onClick}>
         {props.name}
       </button>
     );

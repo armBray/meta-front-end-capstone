@@ -41,7 +41,7 @@ function CustomersSay() {
             {
               cards.map(
                 (card) => (
-                  <CardTestimonial card={card}/>
+                  <CardTestimonial key= {card.img} card={card}/>
                 )
               )
             }

@@ -51,54 +51,54 @@ h1,h2,h3,h4,h5,h6 {
 
 // TO TEST
 .title {
-  font-family: $font-family-one, sans-serif;
+  font-family: $font-family-one, 'sans-serif';
   font-size: 48pt;
   font-weight: 500
 }
 
 .subtitle {
-  font-family: $font-family-one, sans-serif;
+  font-family: $font-family-one, 'sans-serif';
   font-size: 32pt;
   font-weight: 400
 }
 
 .leadtext {
-  font-family: $font-family-two, serif;
+  font-family: $font-family-two, 'serif';
   font-size: 18pt;
   font-weight: 400
 }
 .section-title {
-  font-family: $font-family-two, serif;
+  font-family: $font-family-two, 'serif';
   font-size: 20pt;
   font-weight: 800
 }
 %section-title {
-  font-family: $font-family-two, serif;
+  font-family: $font-family-two, 'serif';
   font-size: 20pt;
   font-weight: 800
 }
 .section-categories {
-  font-family: $font-family-two, serif;
+  font-family: $font-family-two, 'serif';
   font-size: 16pt;
   font-weight: 800
 }
 .card-title {
-  font-family: $font-family-two, serif;
+  font-family: $font-family-two, 'serif';
   font-size: 18pt;
   font-weight: 700
 }
 .paragraph-text {
-  font-family: $font-family-two, serif;
+  font-family: $font-family-two, 'serif';
   font-size: 16pt;
   font-weight: 400
 }
 .highlight-text {
-  font-family: $font-family-two, serif;
+  font-family: $font-family-two, 'serif';
   font-size: 16pt;
   font-weight: 500
 }
 %highlight-text {
-  font-family: $font-family-two, serif;
+  font-family: $font-family-two, 'serif';
   font-size: 16pt;
   font-weight: 500
 }
@@ -473,9 +473,91 @@ transform: translateX(-100%);
 
 
 /*** BOOKING ***/
-.main-booking {
+#booking {
   background-color: #495E57;
 }
+.main-booking {
+  background-color: #495E57;
+  color: #EDEFEE;
+  padding: 5rem 3rem;
+  margin: 0 auto;
+  height: fit-content;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  fieldset {
+    display: flex;
+    width: 480px;
+    max-width: 100%;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex-direction: column;
+  }
+
+  label {
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  sup {
+    color: red;
+    top: -2px;
+    font-size: 95%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  
+  input,
+  select {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    height: 32px;
+    padding: 0 8px;
+    color: #333333;
+  }
+
+  // input::placeholder {
+  //   color: red;
+  //   opacity: 1; /* Firefox */
+  // }
+  
+  .Field {
+    position: relative;
+    padding-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  button {
+    padding: 12px;
+    width: 240px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color:#F4CE14;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  button:disabled,
+  button[disabled] {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+  }
+}
+
+
+
 
 // *** FOOTER ***
 footer {

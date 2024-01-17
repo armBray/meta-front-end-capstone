@@ -1,6 +1,6 @@
-// import image from '../assets/icons_assets/restauranfood.jpg'
 
-import Button from "./Button";
+
+import BookingForm from "./BookingForm";
 
 function BookingPage() {
     return (
@@ -9,8 +9,8 @@ function BookingPage() {
           <div className='bar-title'>
             <h1 className='section-title'>Booking</h1>
           </div>
-          <div className='main-booking-cards'>
-            
+          <div className='main-booking-form'>
+            <BookingForm />
           </div>
         </div>
       </main>

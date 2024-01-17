@@ -53,7 +53,7 @@ function Specials() {
           </div>
           <div className='main-menu-cards'>
             {cards.map( (card) => (
-              <CardMenu card={card}/>
+              <CardMenu key= {card.img} card={card}/>
             ) )}
           </div>
         </div>
