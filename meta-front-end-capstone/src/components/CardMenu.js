@@ -1,19 +1,12 @@
-import bruschetta from '../assets/icons_assets/bruchetta.svg'
-import delivery from '../assets/icons_assets/images/delivery.jpg'
 
-function Card(props) {
-  const card = {
-    img: bruschetta,
-    h1: 'Greek salad',
-    price: '$12.99',
-    description: 'The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.',
-  }
+import delivery from '../assets/icons_assets/delivery.jpg'
 
+function CardMenu(props) {
 
     return (
-      <div className='card'>
+      <div className='card-menu'>
 
-        <img src={props.card.img} alt="bruschetta card" />
+        <img src={props.card.img} alt={props.card.description} />
 
         <div className='card-body'>
           <div className='card-header'>
@@ -33,4 +26,4 @@ function Card(props) {
     );
   }
 
-export default Card;
+export default CardMenu;

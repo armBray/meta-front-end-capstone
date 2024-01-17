@@ -1,4 +1,4 @@
-import image from '../assets/icons_assets/restauranfood.jpg'
+import image from '../assets/card/restaurant/restauranfood.jpg'
 
 import Button from "./Button";
 
