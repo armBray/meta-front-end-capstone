@@ -6,10 +6,11 @@ function Nav(props) {
         {props.name === 'header' ?
           <ul className='li-header highlight-text flex-h' onClick={props.onClick} ref={props.refProp}>
             <li><a href="/">Home</a></li>
-            <li><a href="#customersay">About</a></li>
+            <li><a href="#chicago">About</a></li>
             <li><a href="#specials">Menu</a></li>
             <li><a href="#booking">Reservation</a></li>
             <li><a href="#footer">Contact</a></li>
+            <li><a href="#customersay">Customers</a></li>
             <li><a href="#login">Login</a></li>
           </ul>
 

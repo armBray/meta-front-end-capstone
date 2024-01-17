@@ -425,15 +425,54 @@ transform: translateX(-100%);
   .card-testimonial .card-stars img {
     height: 25px;
   }
-
-
 }
 
 
 /*** CHICAGO ***/
-.main-chicago {
+#chicago {
   background-color:#ffffff;
 }
+.main-chicago {
+  background-color:#EDEFEE;
+  padding: 5rem 3rem;
+  margin: 0 auto;
+  height: fit-content;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    color: #F4CE14;
+  }
+
+  h2,p {
+    color:#333333 ;
+  }
+
+  p {
+    padding: 40px 10px;
+    min-width: 50px;
+    max-width: 550px;
+  }
+
+  .aboutus-images-grid {
+    grid-gap: 1.5em;
+    display: grid;
+    gap: 1.5em;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+
+/*** BOOKING ***/
 .main-booking {
   background-color: #495E57;
 }
@@ -524,6 +563,10 @@ footer h3 {
     }
   }
 
+  .main-chicago .aboutus-images-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
   footer {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -584,6 +627,10 @@ footer h3 {
     }
   }
 
+  .main-chicago {
+    padding-left: 15%;
+  }
+
 }
 
 @media (min-width: 1024px) {
@@ -603,6 +650,30 @@ footer h3 {
     }
 
     padding-left: 15%;
+  }
+
+  .main-chicago {
+    position: relative;
+    margin-bottom: 20px;
+
+    p {
+      max-width: 400px;
+    }
+  } 
+
+  .main-chicago .aboutus-images-grid .photo-cont-1, .main-chicago .aboutus-images-grid .photo-cont-2 {
+    height: 320px;
+    position: absolute;
+    width: 272px;
+  }
+  .main-chicago .aboutus-images-grid .photo-cont-1 {
+    right: 30px;
+    top: 40px;
+  }
+  .main-chicago .aboutus-images-grid .photo-cont-2 {
+    right: 200px;
+    top: 198px;
+    z-index: 0;
   }
 
   footer {
@@ -635,10 +706,37 @@ footer h3 {
   .main-customers-cards {
     gap: 5rem !important; 
   }
+
+  .main-chicago {
+    padding-left: 20%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  
+  .main-chicago .aboutus-images-grid .photo-cont-1 {
+    right: 100px;
+    top: 40px;
+  }
+  .main-chicago .aboutus-images-grid .photo-cont-2 {
+    right: 200px;
+    top: 198px;
+    z-index: 0;
+  }
 }
 
 @media (min-width: 1500px) {
   header {
     background-color: rgb(2, 65, 59)
+  }
+
+  .main-chicago .aboutus-images-grid .photo-cont-1 {
+    right: 300px;
+    top: 40px;
+  }
+  .main-chicago .aboutus-images-grid .photo-cont-2 {
+    right: 500px;
+    top: 198px;
+    z-index: 0;
   }
 }
