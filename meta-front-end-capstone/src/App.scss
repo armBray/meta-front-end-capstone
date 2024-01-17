@@ -624,6 +624,17 @@ footer h3 {
 
     padding-left: 25%;
   }
+
+  .main-customers {
+    padding: 10rem 15rem;
+    .section-title {
+      padding-bottom: 4rem;
+    }
+  }
+
+  .main-customers-cards {
+    gap: 5rem !important; 
+  }
 }
 
 @media (min-width: 1500px) {
