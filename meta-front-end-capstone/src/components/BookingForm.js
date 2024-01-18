@@ -3,9 +3,9 @@ import  { useState } from 'react'
 function BookingForm(props) {
   // const today = new Date().toLocaleDateString()
 
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState(props.state[1]);
-  const [guests, setGuests] = useState('');
+  const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
+  const [time, setTime] = useState(props.availableTimes[1]);
+  const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState('Birthday');
   
 
@@ -22,17 +22,18 @@ function BookingForm(props) {
 
   const handleSubmit = (e) => { 
     e.preventDefault(); 
-    console.log("Table Booked!",
-    "\nOccasion: ", occasion,
-    "\nGuests\t: ", guests,
-    "\nDate\t: ", date,
-    "\nTime\t: ", time)
-    alert("Table Booked!",
-          "\nOccasion: ", occasion,
-          "\nGuests: ", guests,
-          "\nDate: ", date,
-          "\nTime: ", time
-          ); 
+    // console.log("Table Booked!",
+    // "\nOccasion: ", occasion,
+    // "\nGuests\t: ", guests,
+    // "\nDate\t: ", date,
+    // "\nTime\t: ", time)
+    // alert("Table Booked!",
+    //       "\nOccasion: ", occasion,
+    //       "\nGuests: ", guests,
+    //       "\nDate: ", date,
+    //       "\nTime: ", time
+    //       ); 
+    props.submitData({ date, time, guests, occasion, });
     clearForm(); 
   }; 
 
@@ -42,7 +43,7 @@ function BookingForm(props) {
         <form onSubmit={handleSubmit}>
           <fieldset> 
             <div className="Field"> 
-              <label> 
+              <label htmlFor="res-date"> 
                 Choose date <sup>*</sup> 
               </label> 
               <input 
@@ -58,7 +59,7 @@ function BookingForm(props) {
             </div> 
             
             <div className="Field">
-              <label>
+              <label htmlFor="res-time">
                 Choose time <sup>*</sup>
               </label>
               <select 
@@ -66,17 +67,16 @@ function BookingForm(props) {
                 value={time}
                 onChange={(e) => {
                   setTime(e.target.value)
-                  props.update({value: e.target.value})
                   }
                 }
                 required
               >
-                {props.state?.map( (time) => <option key={time} value={time}>{time}</option> )}
+                {props.availableTimes?.map( (time) => <option key={time} value={time} data-testid="booking-time-option">{time}</option> )}
               </select>
             </div>
 
             <div className="Field"> 
-              <label> 
+              <label htmlFor="guests"> 
               Number of guests <sup>*</sup> 
               </label> 
               <input 
@@ -94,7 +94,7 @@ function BookingForm(props) {
             </div>
 
             <div className="Field">
-              <label>
+              <label htmlFor="occasion">
                 Occasion <sup>*</sup>
               </label>
               <select 
@@ -103,8 +103,8 @@ function BookingForm(props) {
                 onChange={(e) => setOccasion(e.target.value)}
                 required
               >
-                <option value="Birthday">Birthday</option>
-                <option value="Anniversary">Anniversary</option>
+                <option value="Birthday" data-testid="booking-occasion-option" >Birthday</option>
+                <option value="Anniversary" data-testid="booking-occasion-option">Anniversary</option>
               </select>
             </div>
             

@@ -1,35 +1,27 @@
 import  { useState, useReducer } from 'react'
 
 import BookingForm from "./BookingForm";
+import { fetchAPI, submitAPI } from '../utils/fakeAPI';
+
+const updateTimes = (availableTimes, date) => {
+  const response = fetchAPI(new Date(date));
+  return (response.length !== 0) ? response : availableTimes; 
+};
+
+const initializeTimes = initialAvailableTimes => 
+  [...initialAvailableTimes, ...fetchAPI(new Date())];
 
 function BookingPage() {
 
-  const reducer = (state,action) => {
-    let arr = state.filter(item => item !== action.value)
-    // console.log(arr);
-    return arr
-  }
+  const [
+    availableTimes, 
+    dispatchOnDateChange
+  ] = useReducer(updateTimes, [], initializeTimes);
 
-  const initializeTimes = [
-    'Select time',
-    '17:00',
-    '18:00',
-    '19:00',
-    '20:00',
-    '21:00',
-    '22:00',
-  ]
-
-  const [availableTimes,updateTimes] = useReducer(reducer,initializeTimes)
-
-
-
-  // const initializeTimes = () => {
-  //   return availableTimes
-  // }
-  // const updateTimes = () => {
-  //   return availableTimes
-  // }
+  const submitData = formData => {
+    const response = submitAPI(formData);
+    // if (response) navigate(pages.get('confirmedBooking').path);
+  }; 
 
   return (
     <main id='booking'>
@@ -38,7 +30,11 @@ function BookingPage() {
           <h1 className='section-title'>Booking</h1>
         </div>
         <div className='main-booking-form'>
-          <BookingForm state={availableTimes} update={updateTimes} />
+          <BookingForm 
+            availableTimes={availableTimes} 
+            dispatchOnDateChange={dispatchOnDateChange} 
+            submitData={submitData}  
+          />
         </div>
       </div>
     </main>
