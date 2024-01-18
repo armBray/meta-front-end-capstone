@@ -1,7 +1,8 @@
 import  { useState, useReducer } from 'react'
+import { useNavigate } from "react-router-dom";
 
 import BookingForm from "./BookingForm";
-import { fetchAPI, submitAPI } from '../utils/fakeAPI';
+import { fetchAPI, submitAPI } from '../../utils/fakeAPI';
 
 const updateTimes = (availableTimes, date) => {
   const response = fetchAPI(new Date(date));
@@ -9,9 +10,10 @@ const updateTimes = (availableTimes, date) => {
 };
 
 const initializeTimes = initialAvailableTimes => 
-  [...initialAvailableTimes, ...fetchAPI(new Date())];
+[...initialAvailableTimes, ...fetchAPI(new Date())];
 
 function BookingPage() {
+  const navigate = useNavigate();
 
   const [
     availableTimes, 
@@ -20,7 +22,7 @@ function BookingPage() {
 
   const submitData = formData => {
     const response = submitAPI(formData);
-    // if (response) navigate(pages.get('confirmedBooking').path);
+    if (response) navigate("/confirmed-booking");
   }; 
 
   return (

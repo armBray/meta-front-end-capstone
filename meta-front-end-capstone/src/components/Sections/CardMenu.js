@@ -1,5 +1,5 @@
 
-import delivery from '../assets/icons_assets/delivery.jpg'
+import delivery from '../../assets/icons_assets/delivery.jpg'
 
 function CardMenu(props) {
 

@@ -1,8 +1,8 @@
 import {useEffect, useRef, useState} from 'react'
 
-import logo from '../Logo.svg';
-import hamburger from '../assets/icons_assets/🦆 icon _hamburger menu.svg'
-import ext from '../assets/icons_assets/x-symbol-svgrepo-com.svg'
+import logo from '../../Logo.svg';
+import hamburger from '../../assets/icons_assets/🦆 icon _hamburger menu.svg'
+import ext from '../../assets/icons_assets/x-symbol-svgrepo-com.svg'
 import Nav from './Nav';
 
 function Header() {

@@ -1,4 +1,4 @@
-import logo from '../logo-footer.png';
+import logo from '../../logo-footer.png';
 import Nav from './Nav';
 
 function Footer() {

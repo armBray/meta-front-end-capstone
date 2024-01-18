@@ -1,6 +1,8 @@
 import  { useState } from 'react'
 
+
 function BookingForm(props) {
+  
   // const today = new Date().toLocaleDateString()
 
   const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
@@ -34,6 +36,7 @@ function BookingForm(props) {
     //       "\nTime: ", time
     //       ); 
     props.submitData({ date, time, guests, occasion, });
+    
     clearForm(); 
   }; 
 

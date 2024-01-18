@@ -1,7 +1,7 @@
-import houcine from '../assets/card/testimonials/houcine-ncib-B4TjXnI0Y2c-unsplash.jpg'
-import jake from '../assets/card/testimonials/jake-nackos-IF9TK5Uy-KI-unsplash.jpg'
-import joseph from '../assets/card/testimonials/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg'
-import michael from '../assets/card/testimonials/michael-dam-mEZ3PoFGs_k-unsplash.jpg'
+import houcine from '../../assets/card/testimonials/houcine-ncib-B4TjXnI0Y2c-unsplash.jpg'
+import jake from '../../assets/card/testimonials/jake-nackos-IF9TK5Uy-KI-unsplash.jpg'
+import joseph from '../../assets/card/testimonials/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg'
+import michael from '../../assets/card/testimonials/michael-dam-mEZ3PoFGs_k-unsplash.jpg'
 
 import CardTestimonial from './CardTestimonial'
 

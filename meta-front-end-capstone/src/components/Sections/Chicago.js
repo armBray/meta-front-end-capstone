@@ -1,5 +1,5 @@
-import image1 from '../assets/card/others/Mario and Adrian A.jpg'
-import image2 from '../assets/card/others/Mario and Adrian b.jpg'
+import image1 from '../../assets/card/others/Mario and Adrian A.jpg'
+import image2 from '../../assets/card/others/Mario and Adrian b.jpg'
 
 
 function Chicago() {

@@ -1,11 +1,11 @@
 
 
 // import bruschetta from '../assets/card/dishes/bruchetta.svg'
-import bruschetta_small from '../assets/card/dishes/bruschetta_small.jpg'
-import fish_and_chips_small from '../assets/card/dishes/fish_and_chips_small.jpg'
-import greek_salad_small from '../assets/card/dishes/greek_salad_small.jpg'
-import lemon_dessert from '../assets/card/dishes/lemon dessert.jpg'
-import pasta_small from '../assets/card/dishes/pasta_small.jpg'
+import bruschetta_small from '../../assets/card/dishes/bruschetta_small.jpg'
+import fish_and_chips_small from '../../assets/card/dishes/fish_and_chips_small.jpg'
+import greek_salad_small from '../../assets/card/dishes/greek_salad_small.jpg'
+import lemon_dessert from '../../assets/card/dishes/lemon dessert.jpg'
+import pasta_small from '../../assets/card/dishes/pasta_small.jpg'
 
 
 import Button from "./Button";

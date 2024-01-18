@@ -70,7 +70,7 @@ describe('Booking form', () => {
   //     />
   //   );
 
-  //   const dateInput = screen.getByLabelText(/Date/);
+  //   const dateInput = screen.getByLabelText(/Choose date/);
   //   fireEvent.change(dateInput, { target: { value: '' } });
   //   fireEvent.blur(dateInput);
   //   const errorMessage = screen.getByTestId('error-message');

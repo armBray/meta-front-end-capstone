@@ -1,5 +1,5 @@
 
-import star from '../assets/icons_assets/star-svgrepo-com.svg'
+import star from '../../assets/icons_assets/star-svgrepo-com.svg'
 
 function CardTestimonial(props) {
 
