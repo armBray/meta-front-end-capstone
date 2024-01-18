@@ -4,9 +4,10 @@ function BookingForm(props) {
   // const today = new Date().toLocaleDateString()
 
   const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
+  const [time, setTime] = useState(props.state[1]);
   const [guests, setGuests] = useState('');
-  const [occasion, setOccasion] = useState('');
+  const [occasion, setOccasion] = useState('Birthday');
+  
 
   const clearForm = () => { 
     // setFirstName(""); 
@@ -21,7 +22,17 @@ function BookingForm(props) {
 
   const handleSubmit = (e) => { 
     e.preventDefault(); 
-    alert("Account created!"); 
+    console.log("Table Booked!",
+    "\nOccasion: ", occasion,
+    "\nGuests\t: ", guests,
+    "\nDate\t: ", date,
+    "\nTime\t: ", time)
+    alert("Table Booked!",
+          "\nOccasion: ", occasion,
+          "\nGuests: ", guests,
+          "\nDate: ", date,
+          "\nTime: ", time
+          ); 
     clearForm(); 
   }; 
 
@@ -42,6 +53,7 @@ function BookingForm(props) {
                   setDate(e.target.value); 
                 }} 
                 placeholder='choose a date'
+                required
               /> 
             </div> 
             
@@ -52,14 +64,14 @@ function BookingForm(props) {
               <select 
                 id="res-time"
                 value={time}
-                onChange={(e) => setTime(e.target.value)}
+                onChange={(e) => {
+                  setTime(e.target.value)
+                  props.update({value: e.target.value})
+                  }
+                }
+                required
               >
-                <option value="17:00">17:00</option>
-                <option value="18:00">18:00</option>
-                <option value="19:00">19:00</option>
-                <option value="20:00">20:00</option>
-                <option value="21:00">21:00</option>
-                <option value="22:00">22:00</option>
+                {props.state?.map( (time) => <option key={time} value={time}>{time}</option> )}
               </select>
             </div>
 
@@ -77,6 +89,7 @@ function BookingForm(props) {
                   setGuests(e.target.value); 
                 }} 
                 placeholder="max 30" 
+                required
               /> 
             </div>
 
@@ -88,6 +101,7 @@ function BookingForm(props) {
                 id="occasion"
                 value={occasion}
                 onChange={(e) => setOccasion(e.target.value)}
+                required
               >
                 <option value="Birthday">Birthday</option>
                 <option value="Anniversary">Anniversary</option>

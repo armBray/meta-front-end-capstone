@@ -488,11 +488,12 @@ transform: translateX(-100%);
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
 
   fieldset {
     display: flex;
-    width: 480px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 500px;
     padding: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
