@@ -1,5 +1,5 @@
 import  { useRef,useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import image from '../../assets/card/restaurant/restauranfood.jpg'
 
 // import Button from "./Button";
@@ -22,13 +22,13 @@ function HomePage() {
   // },[])
 
     return (
-      <main>
+      <main id='home'>
         <div className="main-hero">
           <h1 className="title">Little Lemon</h1>
           <h2 className="subtitle">Chicago</h2>
           <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
           {/* <Button refProp={buttonRef} name="Reserve a Table"/> */}
-          <Link to='/#menu'><button>Reserve a table</button></Link>
+          <HashLink to='/#booking'><button>Reserve a table</button></HashLink>
           <img src={image} alt="restauran food image" />
         </div>
       </main>

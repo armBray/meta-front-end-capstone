@@ -29,7 +29,7 @@ function BookingPage() {
     <main id='booking'>
       <div className="main-booking">
         <div className='bar-title'>
-          <h1 className='section-title'>Booking</h1>
+          <h1 className='section-title'>Book a Table</h1>
         </div>
         <div className='main-booking-form'>
           <BookingForm 

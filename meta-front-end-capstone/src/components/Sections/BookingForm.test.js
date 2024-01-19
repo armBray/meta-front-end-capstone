@@ -59,47 +59,47 @@ describe('Booking form', () => {
     });
   });
 
-  // test(
-  //   `should display an error message and disable sumbit button when date 
-  //   field's value is empty`, () => {
-  //   render(
-  //     <BookingForm 
-  //       availableTimes={availableTimes} 
-  //       dispatchOnDateChange={dispatchOnDateChange} 
-  //       submitData={submitData} 
-  //     />
-  //   );
+  test(
+    `should display an error message and disable sumbit button when date 
+    field's value is empty`, () => {
+    render(
+      <BookingForm 
+        availableTimes={availableTimes} 
+        dispatchOnDateChange={dispatchOnDateChange} 
+        submitData={submitData} 
+      />
+    );
 
-  //   const dateInput = screen.getByLabelText(/Choose date/);
-  //   fireEvent.change(dateInput, { target: { value: '' } });
-  //   fireEvent.blur(dateInput);
-  //   const errorMessage = screen.getByTestId('error-message');
-  //   const submitButton = screen.getByRole('button');
+    const dateInput = screen.getByLabelText(/Choose date/);
+    fireEvent.change(dateInput, { target: { value: '' } });
+    fireEvent.blur(dateInput);
+    const errorMessage = screen.getByTestId('error-message');
+    const submitButton = screen.getByRole('button');
 
-  //   expect(errorMessage).toBeInTheDocument();
-  //   expect(errorMessage).toHaveTextContent('Please choose a valid date');
-  //   expect(submitButton).toBeDisabled();
-  // });
+    expect(errorMessage).toBeInTheDocument();
+    expect(errorMessage).toHaveTextContent('Please choose a valid date');
+    expect(submitButton).toBeDisabled();
+  });
 
-  // test(
-  //   `should display an error message and disable sumbit button when number of  
-  //   guests field's value is empty`, () => {
-  //   render(
-  //     <BookingForm 
-  //       availableTimes={availableTimes} 
-  //       dispatchOnDateChange={dispatchOnDateChange} 
-  //       submitData={submitData} 
-  //     />
-  //   );
+  test(
+    `should display an error message and disable sumbit button when number of  
+    guests field's value is empty`, () => {
+    render(
+      <BookingForm 
+        availableTimes={availableTimes} 
+        dispatchOnDateChange={dispatchOnDateChange} 
+        submitData={submitData} 
+      />
+    );
 
-  //   const numberOfGuestsInput = screen.getByLabelText(/Number of guests/);
-  //   fireEvent.change(numberOfGuestsInput, { target: { value: '' } });
-  //   fireEvent.blur(numberOfGuestsInput);
-  //   const errorMessage = screen.getByTestId('error-message');
-  //   const submitButton = screen.getByRole('button');
+    const numberOfGuestsInput = screen.getByLabelText(/guests/);
+    fireEvent.change(numberOfGuestsInput, { target: { value: '' } });
+    fireEvent.blur(numberOfGuestsInput);
+    const errorMessage = screen.getByTestId('error-message');
+    const submitButton = screen.getByRole('button');
 
-  //   expect(errorMessage).toBeInTheDocument();
-  //   expect(errorMessage).toHaveTextContent('Please enter a number between 1 and 10');
-  //   expect(submitButton).toBeDisabled();
-  // });
+    expect(errorMessage).toBeInTheDocument();
+    expect(errorMessage).toHaveTextContent('Please enter a number between 2 and 30');
+    expect(submitButton).toBeDisabled();
+  });
 });

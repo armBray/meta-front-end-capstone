@@ -1,43 +1,34 @@
 import  { useState } from 'react'
 
-
 function BookingForm(props) {
   
-  // const today = new Date().toLocaleDateString()
+  const today = new Date().toISOString().split('T')[0]
 
-  const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
+  const [date, setDate] = useState(today);
   const [time, setTime] = useState(props.availableTimes[1]);
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState('Birthday');
-  
 
-  const clearForm = () => { 
-    // setFirstName(""); 
-    // setLastName(""); 
-    // setEmail(""); 
-    // setPassword({ 
-    //   value: "", 
-    //   isTouched: false, 
-    // }); 
-    // setRole("role"); 
-  };
+
+  const invalidDateErrorMessage = 'Please choose a valid date';
+  const invalidTimeErrorMessage = 'Please choose a valid time';
+  const invalidNumberOfGuestsErrorMessage = 'Please enter a number between 2 and 30';
+  const invalidOccasionErrorMessage = 'Please choose a valid occasion';
+  
+  const isDateValid = () => date !== '';
+  const isTimeValid = () => time !== '';
+  const isNumberOfGuestsValid = () => guests !== '';
+  const isOccasionValid = () => occasion !== '';
+
+  const getIsFormValid = () => 
+    isDateValid() 
+    && isTimeValid() 
+    && isNumberOfGuestsValid() 
+    && isOccasionValid();
 
   const handleSubmit = (e) => { 
     e.preventDefault(); 
-    // console.log("Table Booked!",
-    // "\nOccasion: ", occasion,
-    // "\nGuests\t: ", guests,
-    // "\nDate\t: ", date,
-    // "\nTime\t: ", time)
-    // alert("Table Booked!",
-    //       "\nOccasion: ", occasion,
-    //       "\nGuests: ", guests,
-    //       "\nDate: ", date,
-    //       "\nTime: ", time
-    //       ); 
     props.submitData({ date, time, guests, occasion, });
-    
-    clearForm(); 
   }; 
 
     return (
@@ -52,13 +43,19 @@ function BookingForm(props) {
               <input 
                 type="date" 
                 id="res-date"
+                name="res-date"
                 value={date} 
                 onChange={(e) => { 
                   setDate(e.target.value); 
+                  props.dispatchOnDateChange(e.target.value);
                 }} 
                 placeholder='choose a date'
-                required
+                required={true}
+                min={today}
               /> 
+
+              {!isDateValid() && invalidDateErrorMessage ? 
+                <p data-testid="error-message">{invalidDateErrorMessage}</p> : null}
             </div> 
             
             <div className="Field">
@@ -67,15 +64,16 @@ function BookingForm(props) {
               </label>
               <select 
                 id="res-time"
+                name="res-date"
                 value={time}
-                onChange={(e) => {
-                  setTime(e.target.value)
-                  }
-                }
-                required
+                onChange={(e) => {setTime(e.target.value)}}
+                required={true} 
               >
                 {props.availableTimes?.map( (time) => <option key={time} value={time} data-testid="booking-time-option">{time}</option> )}
               </select>
+
+              {!isTimeValid() && invalidTimeErrorMessage ? 
+                <p data-testid="error-message">{invalidTimeErrorMessage}</p> : null}
             </div>
 
             <div className="Field"> 
@@ -84,16 +82,20 @@ function BookingForm(props) {
               </label> 
               <input 
                 type="number" 
-                min="2" 
-                max="30" 
                 id="guests"
+                name="guests"
                 value={guests} 
                 onChange={(e) => { 
                   setGuests(e.target.value); 
                 }} 
                 placeholder="max 30" 
-                required
+                required={true} 
+                min="2" 
+                max="30" 
               /> 
+
+              {!isNumberOfGuestsValid() && invalidNumberOfGuestsErrorMessage ? 
+                <p data-testid="error-message">{invalidNumberOfGuestsErrorMessage}</p> : null}
             </div>
 
             <div className="Field">
@@ -102,18 +104,21 @@ function BookingForm(props) {
               </label>
               <select 
                 id="occasion"
+                name="occasion"
                 value={occasion}
                 onChange={(e) => setOccasion(e.target.value)}
-                required
+                required={true} 
               >
                 <option value="Birthday" data-testid="booking-occasion-option" >Birthday</option>
                 <option value="Anniversary" data-testid="booking-occasion-option">Anniversary</option>
               </select>
+
+              {!isOccasionValid() && invalidOccasionErrorMessage ? 
+                <p data-testid="error-message">{invalidOccasionErrorMessage}</p> : null}
             </div>
             
-            <button type="submit"> 
-            {/* <button type="submit" disabled={!getIsFormValid()}>  */}
-              Make Your reservation! 
+            <button type="submit" disabled={!getIsFormValid}> 
+              Book Now! 
             </button> 
           </fieldset> 
         </form>

@@ -127,6 +127,7 @@ header {
   padding: 20px;
   z-index: 100;
   position: fixed;
+  transition: 0.5s
 }
 
 header div {
@@ -517,7 +518,7 @@ transform: translateX(-100%);
 
   fieldset {
     display: flex;
-    width: 100%;
+    width: 300px;
     max-width: 500px;
     padding: 16px;
     border: 1px solid #ccc;
@@ -561,16 +562,18 @@ transform: translateX(-100%);
   }
 
   button {
-    padding: 12px;
-    width: 240px;
+    padding: 15px;
+    width:fit-content;
     border-radius: 4px;
-    border: 1px solid #ccc;
-    background-color:#F4CE14;
+    border: none;
+    background-color:#dfa916;
     color: white;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: bold;
-    cursor: pointer;
+    cursor: pointer;    
+    align-self: center;
+
   }
   
   button:disabled,
@@ -579,6 +582,11 @@ transform: translateX(-100%);
     background-color: #cccccc;
     color: #666666;
     cursor: not-allowed;
+  }
+
+  p {
+    font-size: 15px;
+    padding: 5px 0;
   }
 }
 
@@ -612,6 +620,9 @@ footer h3 {
 .footer-nav {
   padding: 0 40px;
 }
+.footer-nav li {
+  padding: 3px 0;
+}
 
 .footer-nav a {
   @extend %highlight-text;
@@ -622,9 +633,9 @@ footer h3 {
 
 /*** MEDIA QUERY ***/
 @media (min-width: 440px) {
-  header {
-    background-color: rgb(37, 37, 37)
-  }
+  // header {
+  //   background-color: rgb(37, 37, 37)
+  // }
 
   .main-hero{
     p {
@@ -654,16 +665,16 @@ footer h3 {
 }
 
 @media (min-width: 640px) {
-  header {
-    background-color: grey
-  }
+  // header {
+  //   background-color: grey
+  // }
 }
 
 //da 640px al prox breakpoint
 @media (min-width: 640px) {
-  header {
-    background-color: rgb(150, 60, 60)
-  }
+  // header {
+  //   background-color: rgb(150, 60, 60)
+  // }
 
   .main-hero{
     p {
@@ -685,9 +696,9 @@ footer h3 {
 //fino a 768px
 @media (min-width: 768px) {
 
-  header {
-    background-color: rgb(236, 147, 29);
-  }
+  // header {
+  //   background-color: rgb(236, 147, 29);
+  // }
 
   header div {
     flex-wrap: wrap;
@@ -742,9 +753,9 @@ footer h3 {
 }
 
 @media (min-width: 1024px) {
-  header {
-    background-color: rgb(191, 241, 53)
-  }
+  // header {
+  //   background-color: rgb(191, 241, 53)
+  // }
 
   .div-header {
     justify-content: space-between;
@@ -791,9 +802,9 @@ footer h3 {
 }
 
 @media (min-width: 1200px) {
-  header {
-    background-color: rgb(7, 165, 152)
-  }
+  // header {
+  //   background-color: rgb(7, 165, 152)
+  // }
 
   .main-hero {
     p {
@@ -802,6 +813,11 @@ footer h3 {
     }
 
     padding-left: 25%;
+  }
+
+  .main-menu {
+    width: 70%;
+    margin: auto;
   }
 
   .main-customers {
@@ -816,9 +832,11 @@ footer h3 {
   }
 
   .main-chicago {
-    padding-left: 20%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin: 4rem 0;
+    padding-left: 30%;
+    p {
+      font-size: 24px;
+    }
   }
 
   
@@ -834,9 +852,9 @@ footer h3 {
 }
 
 @media (min-width: 1500px) {
-  header {
-    background-color: rgb(2, 65, 59)
-  }
+  // header {
+  //   background-color: rgb(2, 65, 59)
+  // }
 
   .main-chicago .aboutus-images-grid .photo-cont-1 {
     right: 300px;
@@ -846,5 +864,15 @@ footer h3 {
     right: 500px;
     top: 198px;
     z-index: 0;
+  }
+
+  .main-booking .Field {
+    font-size: 20px;
+  }
+  .main-booking label {
+    font-size: 18px;
+  }
+  .main-booking button {
+    font-size: 18px;
   }
 }

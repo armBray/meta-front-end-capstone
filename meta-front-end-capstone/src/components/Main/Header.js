@@ -11,29 +11,29 @@ function Header() {
   const menuRef = useRef(null)
   const [visible, setVisible] = useState(false)
 
-  // useEffect(() => {
-  //   let prevScrollPos = window.scrollY;
+  useEffect(() => {
+    let prevScrollPos = window.scrollY;
 
-  //   const handleScroll = () => {
-  //     const currentScrollPos = window.scrollY;
-  //     const headerElement = headerRef.current;
-  //     if (!headerElement) {
-  //       return;
-  //     }
-  //     if (prevScrollPos > currentScrollPos) {
-  //       headerElement.style.transform = "translateY(0)";
-  //     } else {
-  //       headerElement.style.transform = "translateY(-500px)";
-  //     }
-  //     prevScrollPos = currentScrollPos;
-  //   }
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      const headerElement = headerRef.current;
+      if (!headerElement) {
+        return;
+      }
+      if (prevScrollPos > currentScrollPos) {
+        headerElement.style.transform = "translateY(0)";
+      } else {
+        headerElement.style.transform = "translateY(-500px)";
+      }
+      prevScrollPos = currentScrollPos;
+    }
 
-  //   window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll)
 
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll)
-  //   }
-  // }, []);
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, []);
 
   useEffect(() => {
     const handleClickOpen = event => {
